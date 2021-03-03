@@ -1,0 +1,15 @@
+mu = 0;
+sigma = 1;
+p = makedist('Normal','mu',mu,'sigma',sigma);
+x = -5:0.1:5;
+pd = pdf(p,x);
+cd = cdf(p,x);
+hold on;
+plot(x,cd);
+hold on;
+plot(x,pd);
+legend('Cumulative Distribution','Probability Density Distribution','Location','SouthEast');
+hold off;
+m = mean(p);
+s = std(p);
+disp("Mean is " + m + " and variance is " + s^2);
